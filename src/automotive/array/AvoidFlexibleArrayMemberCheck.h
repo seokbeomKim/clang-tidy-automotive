@@ -13,17 +13,12 @@
 
 namespace clang::tidy::automotive {
 
-/// @ingroup misra-c25-arrays
 /// @brief Detects flexible array members in structures.
 ///
 /// Flexible array members (arrays with unspecified size at the end of a struct)
 /// require special handling for memory allocation and can lead to buffer
 /// overflows if not managed correctly. They make code less portable and
 /// harder to analyze statically.
-///
-/// @par MISRA C:2025 Rule 18.7
-/// Flexible array members shall not be declared.
-/// @par Category: Required
 ///
 /// Example:
 /// @code

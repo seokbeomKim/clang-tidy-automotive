@@ -11,19 +11,19 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 add_executable(clang-tidy-standalone
-  ClangTidy.cpp
-  ClangTidyCheck.cpp
-  ClangTidyModule.cpp
-  ClangTidyDiagnosticConsumer.cpp
-  ClangTidyDiagnosticMapping.cpp
-  ClangTidyOptions.cpp
-  ClangTidyProfiling.cpp
-  ExpandModularHeadersPPCallbacks.cpp
-  GlobList.cpp
-  NoLintDirectiveHandler.cpp
+  #ClangTidy.cpp
+  #ClangTidyCheck.cpp
+  #ClangTidyModule.cpp
+  #ClangTidyDiagnosticConsumer.cpp
+  # ClangTidyDiagnosticMapping.cpp
+  #ClangTidyOptions.cpp
+  #ClangTidyProfiling.cpp
+  #ExpandModularHeadersPPCallbacks.cpp
+  #GlobList.cpp
+  #NoLintDirectiveHandler.cpp
 
-  tool/ClangTidyMain.cpp
   tool/ClangTidyToolMain.cpp
+  tool/ClangTidyMain.cpp
 )
 
 # Make all LLVM/Clang headers available
@@ -35,7 +35,7 @@ target_include_directories(clang-tidy-standalone SYSTEM PRIVATE
 
 # Link only the core clang-tidy libraries
 target_link_libraries(clang-tidy-standalone PRIVATE
-
+  clangTidy
   clangAST
   clangASTMatchers
   clangBasic
